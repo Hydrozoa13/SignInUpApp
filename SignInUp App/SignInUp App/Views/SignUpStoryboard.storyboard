@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Create AccountVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="CreateAccountVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                                                                 <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-gq-ksN">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-gq-ksN">
                                                                 <rect key="frame" x="0.0" y="41" width="380" height="34"/>
                                                                 <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
@@ -210,6 +210,21 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0gm-yO-ncp" secondAttribute="trailing" id="ubz-pJ-ga2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTF" destination="qLs-ex-uPm" id="ZVq-DD-QSJ"/>
+                        <outlet property="continueBtn" destination="s3k-yL-qar" id="Wmn-Cn-67m"/>
+                        <outlet property="emailTF" destination="czu-nr-JIb" id="Kld-Bd-JED"/>
+                        <outlet property="errorEmailLbl" destination="IdI-jp-B0j" id="GbX-Ag-Ozp"/>
+                        <outlet property="errorPasswordConfirmLbl" destination="tuY-3U-rdG" id="8JD-Yn-NaG"/>
+                        <outlet property="errorPasswordLbl" destination="UI2-4Z-b5c" id="chQ-jG-NGG"/>
+                        <outlet property="nameTF" destination="FpW-gq-ksN" id="SJj-Cz-pE5"/>
+                        <outlet property="passwordTF" destination="Een-Bz-wlV" id="6DG-ia-JlM"/>
+                        <outlet property="scrollView" destination="0gm-yO-ncp" id="GmC-Ga-SdY"/>
+                        <outletCollection property="passwordIndicatorsViews" destination="oHP-Ov-e47" collectionClass="NSMutableArray" id="3eH-CD-mjG"/>
+                        <outletCollection property="passwordIndicatorsViews" destination="C5M-d5-g5d" collectionClass="NSMutableArray" id="t1S-iR-vgb"/>
+                        <outletCollection property="passwordIndicatorsViews" destination="pdU-3d-JRt" collectionClass="NSMutableArray" id="qVI-XE-5As"/>
+                        <outletCollection property="passwordIndicatorsViews" destination="GcP-jy-GGe" collectionClass="NSMutableArray" id="mAY-IS-pwV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
