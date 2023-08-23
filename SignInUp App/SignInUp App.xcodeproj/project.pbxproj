@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		D16FD7992A9628B8005544B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD7982A9628B8005544B6 /* AppDelegate.swift */; };
 		D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD79A2A9628B8005544B6 /* SceneDelegate.swift */; };
-		D16FD79D2A9628B8005544B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD79C2A9628B8005544B6 /* ViewController.swift */; };
-		D16FD7A02A9628B8005544B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD79E2A9628B8005544B6 /* Main.storyboard */; };
+		D16FD7A02A9628B8005544B6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD79E2A9628B8005544B6 /* MainStoryboard.storyboard */; };
 		D16FD7A22A9628B8005544B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7A12A9628B8005544B6 /* Assets.xcassets */; };
 		D16FD7A52A9628B8005544B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7A32A9628B8005544B6 /* LaunchScreen.storyboard */; };
+		D16FD7AF2A962C14005544B6 /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7AE2A962C14005544B6 /* SignInStoryboard.storyboard */; };
+		D16FD7B12A962FF9005544B6 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D16FD7952A9628B8005544B6 /* SignInUp App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SignInUp App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16FD7982A9628B8005544B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16FD79A2A9628B8005544B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D16FD79C2A9628B8005544B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D16FD79F2A9628B8005544B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D16FD79F2A9628B8005544B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D16FD7A12A9628B8005544B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D16FD7A42A9628B8005544B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D16FD7A62A9628B8005544B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D16FD7AE2A962C14005544B6 /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
+		D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		D16FD7972A9628B8005544B6 /* SignInUp App */ = {
 			isa = PBXGroup;
 			children = (
-				D16FD7982A9628B8005544B6 /* AppDelegate.swift */,
-				D16FD79A2A9628B8005544B6 /* SceneDelegate.swift */,
-				D16FD79C2A9628B8005544B6 /* ViewController.swift */,
-				D16FD79E2A9628B8005544B6 /* Main.storyboard */,
+				D16FD7AD2A96297A005544B6 /* Views */,
 				D16FD7A12A9628B8005544B6 /* Assets.xcassets */,
-				D16FD7A32A9628B8005544B6 /* LaunchScreen.storyboard */,
 				D16FD7A62A9628B8005544B6 /* Info.plist */,
+				D16FD7AC2A96291D005544B6 /* AppDelegate */,
 			);
 			path = "SignInUp App";
+			sourceTree = "<group>";
+		};
+		D16FD7AC2A96291D005544B6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D16FD7982A9628B8005544B6 /* AppDelegate.swift */,
+				D16FD79A2A9628B8005544B6 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D16FD7AD2A96297A005544B6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D16FD7A32A9628B8005544B6 /* LaunchScreen.storyboard */,
+				D16FD7AE2A962C14005544B6 /* SignInStoryboard.storyboard */,
+				D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */,
+				D16FD79E2A9628B8005544B6 /* MainStoryboard.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +144,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16FD7B12A962FF9005544B6 /* SignUpStoryboard.storyboard in Resources */,
 				D16FD7A52A9628B8005544B6 /* LaunchScreen.storyboard in Resources */,
 				D16FD7A22A9628B8005544B6 /* Assets.xcassets in Resources */,
-				D16FD7A02A9628B8005544B6 /* Main.storyboard in Resources */,
+				D16FD7A02A9628B8005544B6 /* MainStoryboard.storyboard in Resources */,
+				D16FD7AF2A962C14005544B6 /* SignInStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +159,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D16FD79D2A9628B8005544B6 /* ViewController.swift in Sources */,
 				D16FD7992A9628B8005544B6 /* AppDelegate.swift in Sources */,
 				D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,12 +167,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D16FD79E2A9628B8005544B6 /* Main.storyboard */ = {
+		D16FD79E2A9628B8005544B6 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D16FD79F2A9628B8005544B6 /* Base */,
 			);
-			name = Main.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		D16FD7A32A9628B8005544B6 /* LaunchScreen.storyboard */ = {
@@ -292,19 +312,22 @@
 				INFOPLIST_FILE = "SignInUp App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = SignInStoryboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.SignInUp-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,19 +343,22 @@
 				INFOPLIST_FILE = "SignInUp App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = SignInStoryboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yourcompany.SignInUp-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
