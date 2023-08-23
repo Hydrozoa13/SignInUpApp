@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sign InVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SignInVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,6 +73,9 @@
                                                     <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="EBx-Bc-E7n" kind="show" id="9CK-be-3hs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -90,10 +93,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ukQ-zj-tiA"/>
+                    <connections>
+                        <outlet property="emailTF" destination="cWk-WQ-ODu" id="eLx-Gh-p91"/>
+                        <outlet property="errorLbl" destination="t0D-I9-SAn" id="Sbx-tR-caL"/>
+                        <outlet property="passwordTF" destination="kbD-o7-kDr" id="IbA-8O-zIf"/>
+                        <outlet property="signInBtn" destination="8sp-6N-Yu4" id="8nA-hW-k47"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.3255813953488" y="3.218884120171674"/>
+        </scene>
+        <!--SignUpStoryboard-->
+        <scene sceneID="fDS-AF-8WQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignUpStoryboard" id="EBx-Bc-E7n" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="raf-Ks-aFp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFF-Vh-ZlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1628" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Da8-8l-662">
@@ -103,6 +122,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3GK-VE-ujK">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -14,6 +14,7 @@
 		D16FD7A52A9628B8005544B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7A32A9628B8005544B6 /* LaunchScreen.storyboard */; };
 		D16FD7AF2A962C14005544B6 /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7AE2A962C14005544B6 /* SignInStoryboard.storyboard */; };
 		D16FD7B12A962FF9005544B6 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */; };
+		D16FD7B42A963E61005544B6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD7B32A963E61005544B6 /* SignInVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D16FD7A62A9628B8005544B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D16FD7AE2A962C14005544B6 /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
+		D16FD7B32A963E61005544B6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		D16FD7972A9628B8005544B6 /* SignInUp App */ = {
 			isa = PBXGroup;
 			children = (
+				D16FD7B22A963D4B005544B6 /* Controllers */,
 				D16FD7AD2A96297A005544B6 /* Views */,
 				D16FD7A12A9628B8005544B6 /* Assets.xcassets */,
 				D16FD7A62A9628B8005544B6 /* Info.plist */,
@@ -84,6 +87,14 @@
 				D16FD79E2A9628B8005544B6 /* MainStoryboard.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D16FD7B22A963D4B005544B6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D16FD7B32A963E61005544B6 /* SignInVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 			files = (
 				D16FD7992A9628B8005544B6 /* AppDelegate.swift in Sources */,
 				D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */,
+				D16FD7B42A963E61005544B6 /* SignInVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
