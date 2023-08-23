@@ -22,8 +22,11 @@ class SignInVC: UIViewController {
     private func setupUI() {
         errorLbl.isHidden = true
         signInBtn.isEnabled = false
+        hideKeyboardWhenTappedAround()
     }
 
+    @IBAction func unwindToSignInVC(_ unwindSegue: UIStoryboardSegue) {}
+    
     /*
     // MARK: - Navigation
 
