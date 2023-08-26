@@ -31,7 +31,7 @@
                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="unn-JN-vHK" kind="unwind" unwindAction="unwindToSignInVC:" id="fxr-Fc-X9K"/>
+                                                    <action selector="signInAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4ZU-9y-2Le"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8V-KP-SyV">
@@ -60,6 +60,9 @@
                                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                                                        <connections>
+                                                                            <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="Adq-Xk-ebO"/>
+                                                                        </connections>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: invalid email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdI-jp-B0j">
                                                                         <rect key="frame" x="0.0" y="39" width="380" height="20.333333333333329"/>
@@ -105,6 +108,9 @@
                                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                                                        <connections>
+                                                                            <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="pNl-LR-eTo"/>
+                                                                        </connections>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: weak password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI2-4Z-b5c">
                                                                         <rect key="frame" x="0.0" y="39" width="380" height="20.333333333333329"/>
@@ -156,8 +162,11 @@
                                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                                                        <connections>
+                                                                            <action selector="confirmPassTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="hR2-aR-mew"/>
+                                                                        </connections>
                                                                     </textField>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: the password doesn't match, please try again." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuY-3U-rdG">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: the password doesn't match, please try again" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tuY-3U-rdG">
                                                                         <rect key="frame" x="0.0" y="39" width="380" height="40.666666666666657"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" systemColor="systemRedColor"/>
@@ -173,6 +182,9 @@
                                                                     <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="continueAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gzw-6Y-WI8"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -230,7 +242,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="unn-JN-vHK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="115.81395348837209" y="3.218884120171674"/>
         </scene>

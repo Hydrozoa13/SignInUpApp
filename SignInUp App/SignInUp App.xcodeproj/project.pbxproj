@@ -17,6 +17,8 @@
 		D16FD7B12A962FF9005544B6 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */; };
 		D16FD7B42A963E61005544B6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD7B32A963E61005544B6 /* SignInVC.swift */; };
 		D16FD7B62A965A4C005544B6 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD7B52A965A4C005544B6 /* CreateAccountVC.swift */; };
+		D17BE3EE2A9A4D3C00D24D1A /* VerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE3ED2A9A4D3C00D24D1A /* VerificationService.swift */; };
+		D17BE3F12A9A6C0700D24D1A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE3F02A9A6C0700D24D1A /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D16FD7B02A962FF9005544B6 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		D16FD7B32A963E61005544B6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		D16FD7B52A965A4C005544B6 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
+		D17BE3ED2A9A4D3C00D24D1A /* VerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationService.swift; sourceTree = "<group>"; };
+		D17BE3F02A9A6C0700D24D1A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			isa = PBXGroup;
 			children = (
 				D15BC9232A969ABD006E1FFE /* Extensions */,
+				D17BE3EC2A9A4D0A00D24D1A /* Services */,
+				D17BE3EF2A9A6BE600D24D1A /* Models */,
 				D16FD7B22A963D4B005544B6 /* Controllers */,
 				D16FD7AD2A96297A005544B6 /* Views */,
 				D16FD7A12A9628B8005544B6 /* Assets.xcassets */,
@@ -109,6 +115,22 @@
 				D16FD7B52A965A4C005544B6 /* CreateAccountVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D17BE3EC2A9A4D0A00D24D1A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D17BE3ED2A9A4D3C00D24D1A /* VerificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D17BE3EF2A9A6BE600D24D1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D17BE3F02A9A6C0700D24D1A /* UserModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +207,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D15BC9252A969AD9006E1FFE /* UIViewControllerExt.swift in Sources */,
+				D17BE3F12A9A6C0700D24D1A /* UserModel.swift in Sources */,
 				D16FD7992A9628B8005544B6 /* AppDelegate.swift in Sources */,
+				D17BE3EE2A9A4D3C00D24D1A /* VerificationService.swift in Sources */,
 				D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */,
 				D16FD7B62A965A4C005544B6 /* CreateAccountVC.swift in Sources */,
 				D16FD7B42A963E61005544B6 /* SignInVC.swift in Sources */,
