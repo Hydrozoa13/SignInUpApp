@@ -58,7 +58,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czu-nr-JIb">
                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                                         <connections>
                                                                             <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="Adq-Xk-ebO"/>
@@ -86,7 +86,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FpW-gq-ksN">
                                                                 <rect key="frame" x="0.0" y="41" width="380" height="34"/>
                                                                 <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
+                                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="username"/>
                                                             </textField>
                                                         </subviews>
@@ -106,7 +106,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Een-Bz-wlV">
                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                                         <connections>
                                                                             <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="pNl-LR-eTo"/>
@@ -160,7 +160,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please confirm your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qLs-ex-uPm">
                                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                                         <connections>
                                                                             <action selector="confirmPassTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="hR2-aR-mew"/>
@@ -239,11 +239,77 @@
                         <outletCollection property="passwordIndicatorsViews" destination="C5M-d5-g5d" collectionClass="NSMutableArray" id="t1S-iR-vgb"/>
                         <outletCollection property="passwordIndicatorsViews" destination="pdU-3d-JRt" collectionClass="NSMutableArray" id="qVI-XE-5As"/>
                         <outletCollection property="passwordIndicatorsViews" destination="GcP-jy-GGe" collectionClass="NSMutableArray" id="mAY-IS-pwV"/>
+                        <segue destination="fZn-W7-otf" kind="show" identifier="goToSecretCodeVC" id="ZKj-2R-YMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="115.81395348837209" y="3.218884120171674"/>
+        </scene>
+        <!--Secret CodeVC-->
+        <scene sceneID="OMT-Ex-xnV">
+            <objects>
+                <viewController id="fZn-W7-otf" customClass="SecretCodeVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AkU-q0-7ck">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="Chf-9U-dYe">
+                                <rect key="frame" x="25" y="255.33333333333334" width="380" height="311.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter secret code from your email" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT7-lZ-Hog">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="81"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="33"/>
+                                        <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuE-qG-7FW">
+                                        <rect key="frame" x="0.0" y="155.99999999999997" width="380" height="21"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                        <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Eo-Do-99x">
+                                        <rect key="frame" x="0.0" y="251.99999999999997" width="380" height="59.333333333333343"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter secret code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7h-dO-MXg">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
+                                                <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingChanged" id="kFp-Hg-7da"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: wrong code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqE-qr-3G6">
+                                                <rect key="frame" x="0.0" y="39.000000000000057" width="380" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Uj-ON-Hak"/>
+                        <color key="backgroundColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Chf-9U-dYe" firstAttribute="leading" secondItem="6Uj-ON-Hak" secondAttribute="leading" constant="25" id="DH3-zX-4wR"/>
+                            <constraint firstItem="Chf-9U-dYe" firstAttribute="centerY" secondItem="6Uj-ON-Hak" secondAttribute="centerY" constant="-50" id="OLb-50-ES6"/>
+                            <constraint firstAttribute="trailing" secondItem="Chf-9U-dYe" secondAttribute="trailing" constant="25" id="cOF-bB-Jhr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LjF-Zk-PtB"/>
+                    <connections>
+                        <outlet property="errorCodeLbl" destination="QqE-qr-3G6" id="Jq4-On-lse"/>
+                        <outlet property="infoLbl" destination="VuE-qG-7FW" id="klo-uo-Bvx"/>
+                        <outlet property="secretCodeTF" destination="Q7h-dO-MXg" id="Vwv-or-awn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZL0-6p-Q4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="3"/>
         </scene>
     </scenes>
     <resources>

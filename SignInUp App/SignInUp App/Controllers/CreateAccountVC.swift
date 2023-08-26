@@ -36,10 +36,12 @@ class CreateAccountVC: UIViewController {
         continueBtn.isEnabled = false
         hideKeyboardWhenTappedAround()
         startKeyboardObserver()
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func signInAction() {
         navigationController?.popViewController(animated: true)
+        navigationItem.leftBarButtonItem?.isHidden = true
     }
     
     private var isValidEmail = false { didSet { updateContinueBtnState() } }
@@ -101,6 +103,7 @@ class CreateAccountVC: UIViewController {
            let password = passwordTF.text {
             let userModel = UserModel(name: nameTF.text,
                                       email: email, password: password)
+            performSegue(withIdentifier: "goToSecretCodeVC", sender: userModel)
         }
     }
     
@@ -122,14 +125,9 @@ class CreateAccountVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let destinationVC = segue.destination as? SecretCodeVC,
+              let userModel = sender as? UserModel else { return }
+        destinationVC.userModel = userModel
     }
-    */
-
 }
