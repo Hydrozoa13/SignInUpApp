@@ -13,10 +13,31 @@ class SignInVC: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var errorLbl: UILabel!
     @IBOutlet weak var signInBtn: UIButton!
+    @IBOutlet weak var constraintY: NSLayoutConstraint!
+    
+    var userModel: UserModel?
+    private var emailValidated = false { didSet {updateSignInBtnState()} }
+    private var passwordValidated = false { didSet {updateSignInBtnState()} }
+    private var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    @IBAction func emailTFAction(_ sender: UITextField) {
+        if let email = sender.text, !email.isEmpty,
+           email == userDefaults.object(forKey: "email") as? String {
+            emailValidated = true
+        } else { emailValidated = false }
+    }
+    
+    @IBAction func passwordTFAction(_ sender: UITextField) {
+        if let password = sender.text, !password.isEmpty,
+           password == userDefaults.object(forKey: "password") as? String {
+            passwordValidated = true
+        } else { passwordValidated = false }
+        errorLbl.isHidden = passwordValidated && emailValidated
     }
     
     private func setupUI() {
@@ -25,14 +46,7 @@ class SignInVC: UIViewController {
         hideKeyboardWhenTappedAround()
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func updateSignInBtnState() {
+        signInBtn.isEnabled = emailValidated && passwordValidated
     }
-    */
-
 }

@@ -17,6 +17,7 @@ class SecretCodeVC: UIViewController {
     var userModel: UserModel?
     let randomInt = Int.random(in: 100000...999999)
     var sleepTime = 3
+    private var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,8 @@ class SecretCodeVC: UIViewController {
             }
             return
         }
+        userDefaults.set(userModel?.email, forKey: "email")
+        userDefaults.set(userModel?.password, forKey: "password")
         performSegue(withIdentifier: "goToWelcomeVC", sender: nil)
     }
     
