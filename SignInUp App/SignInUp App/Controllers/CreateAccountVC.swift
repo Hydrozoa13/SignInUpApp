@@ -20,36 +20,21 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var continueBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-    
-    private func setupUI() {
-        errorEmailLbl.isHidden = true
-        errorPasswordLbl.isHidden = true
-        passwordIndicatorsViews.forEach { view in
-            view.alpha = 0.2
-            view.layer.cornerRadius = 7
-        }
-        errorPasswordConfirmLbl.isHidden = true
-        continueBtn.isEnabled = false
-        hideKeyboardWhenTappedAround()
-        startKeyboardObserver()
-        navigationController?.navigationBar.isHidden = true
-    }
-    
-    @IBAction func signInAction() {
-        navigationController?.popViewController(animated: true)
-        navigationItem.leftBarButtonItem?.isHidden = true
-    }
-    
     private var isValidEmail = false { didSet { updateContinueBtnState() } }
     private var isConfirmedPass = false { didSet { updateContinueBtnState() } }
     private var passwordStrength: PasswordStrength = .veryWeak {
         didSet { updateContinueBtnState() }
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+    
+    @IBAction func signInAction() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func emailTFAction(_ sender: UITextField) {
         if let email = sender.text,
            !email.isEmpty,
@@ -82,6 +67,29 @@ class CreateAccountVC: UIViewController {
         errorPasswordConfirmLbl.isHidden = isConfirmedPass
     }
     
+    @IBAction func continueAction() {
+        if let email = emailTF.text,
+           let password = passwordTF.text {
+            let userModel = UserModel(name: nameTF.text,
+                                      email: email, password: password)
+            performSegue(withIdentifier: "goToSecretCodeVC", sender: userModel)
+        }
+    }
+    
+    private func setupUI() {
+        errorEmailLbl.isHidden = true
+        errorPasswordLbl.isHidden = true
+        passwordIndicatorsViews.forEach { view in
+            view.alpha = 0.2
+            view.layer.cornerRadius = 7
+        }
+        errorPasswordConfirmLbl.isHidden = true
+        continueBtn.isEnabled = false
+        hideKeyboardWhenTappedAround()
+        startKeyboardObserver()
+        navigationItem.hidesBackButton = true
+    }
+    
     private func setupStrengthIndicators() {
         passwordIndicatorsViews.enumerated().forEach { index, view in
             if index <= (passwordStrength.rawValue - 1) {
@@ -96,15 +104,6 @@ class CreateAccountVC: UIViewController {
         continueBtn.isEnabled = isValidEmail && isConfirmedPass
             && passwordStrength != .veryWeak
             && passwordStrength != .weak
-    }
-    
-    @IBAction func continueAction() {
-        if let email = emailTF.text,
-           let password = passwordTF.text {
-            let userModel = UserModel(name: nameTF.text,
-                                      email: email, password: password)
-            performSegue(withIdentifier: "goToSecretCodeVC", sender: userModel)
-        }
     }
     
     private func startKeyboardObserver() {

@@ -20,6 +20,7 @@
 		D17BE3EE2A9A4D3C00D24D1A /* VerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE3ED2A9A4D3C00D24D1A /* VerificationService.swift */; };
 		D17BE3F12A9A6C0700D24D1A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE3F02A9A6C0700D24D1A /* UserModel.swift */; };
 		D17BE3F32A9A8D8400D24D1A /* SecretCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BE3F22A9A8D8400D24D1A /* SecretCodeVC.swift */; };
+		D1F17FC52A9B729D005EF89C /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F17FC42A9B729D005EF89C /* WelcomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D17BE3ED2A9A4D3C00D24D1A /* VerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationService.swift; sourceTree = "<group>"; };
 		D17BE3F02A9A6C0700D24D1A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D17BE3F22A9A8D8400D24D1A /* SecretCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretCodeVC.swift; sourceTree = "<group>"; };
+		D1F17FC42A9B729D005EF89C /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				D16FD7B32A963E61005544B6 /* SignInVC.swift */,
 				D16FD7B52A965A4C005544B6 /* CreateAccountVC.swift */,
 				D17BE3F22A9A8D8400D24D1A /* SecretCodeVC.swift */,
+				D1F17FC42A9B729D005EF89C /* WelcomeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				D17BE3EE2A9A4D3C00D24D1A /* VerificationService.swift in Sources */,
 				D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */,
 				D16FD7B62A965A4C005544B6 /* CreateAccountVC.swift in Sources */,
+				D1F17FC52A9B729D005EF89C /* WelcomeVC.swift in Sources */,
 				D16FD7B42A963E61005544B6 /* SignInVC.swift in Sources */,
 				D17BE3F32A9A8D8400D24D1A /* SecretCodeVC.swift in Sources */,
 			);
