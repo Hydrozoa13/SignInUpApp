@@ -10,7 +10,7 @@
         <!--Profile-->
         <scene sceneID="ZWf-2I-brU">
             <objects>
-                <viewController id="evQ-ko-YvW" sceneMemberID="viewController">
+                <viewController id="evQ-ko-YvW" customClass="ProfileVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXq-1i-hia">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,6 +26,9 @@
                                             <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="AIg-bW-D3Y" kind="unwind" unwindAction="unwindToSignInVC:" id="8Is-Ty-UYX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-GO-tgf">
                                         <rect key="frame" x="0.0" y="62.333333333333258" width="343" height="37.333333333333343"/>
@@ -35,6 +38,9 @@
                                             <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteAccAction" destination="evQ-ko-YvW" eventType="touchUpInside" id="zuI-pF-CNe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -50,8 +56,9 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="9zp-Vi-dB2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnE-kd-YaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="AIg-bW-D3Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="505" y="1"/>
+            <point key="canvasLocation" x="534" y="-637"/>
         </scene>
         <!--App-->
         <scene sceneID="Mkc-uq-3mm">
@@ -67,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYG-Is-DvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="-658"/>
+            <point key="canvasLocation" x="534" y="44"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6vZ-sw-RXY">
@@ -80,8 +87,8 @@
                         <color key="selectedImageTintColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zq2-yZ-WLu" kind="relationship" relationship="viewControllers" id="Qr5-JE-USf"/>
                         <segue destination="evQ-ko-YvW" kind="relationship" relationship="viewControllers" id="BzN-tF-1oZ"/>
+                        <segue destination="zq2-yZ-WLu" kind="relationship" relationship="viewControllers" id="Qr5-JE-USf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxe-WC-dAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

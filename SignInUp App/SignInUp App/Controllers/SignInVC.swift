@@ -40,7 +40,7 @@ class SignInVC: UIViewController {
         errorLbl.isHidden = passwordValidated && emailValidated
     }
     
-    @IBAction func signInAction() {
+    @IBAction func unwindToSignInVC(_ unwindSegue: UIStoryboardSegue) {
         passwordTF.text = ""
         signInBtn.isEnabled = false
     }

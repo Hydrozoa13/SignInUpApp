@@ -11,7 +11,7 @@
         <!--Sign InVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SignInVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignInVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,6 @@
                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="signInAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lb2-9o-vWb"/>
                                                     <segue destination="6Po-eJ-HVq" kind="show" identifier="" id="4Fm-NK-bJw"/>
                                                 </connections>
                                             </button>
