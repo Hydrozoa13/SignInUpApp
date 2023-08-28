@@ -34,7 +34,7 @@
                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                 <connections>
-                                                    <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingDidEndOnExit" id="3Rc-J8-eZy"/>
+                                                    <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="P1J-6M-R0v"/>
                                                 </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ruw-u4-aF7">
@@ -46,7 +46,7 @@
                                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                         <connections>
-                                                            <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingDidEndOnExit" id="dm7-Im-Ka2"/>
+                                                            <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="wLP-Z7-zmJ"/>
                                                         </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: wrong email or password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0D-I9-SAn">
@@ -71,6 +71,7 @@
                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
+                                                    <action selector="signInAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lb2-9o-vWb"/>
                                                     <segue destination="6Po-eJ-HVq" kind="show" identifier="" id="4Fm-NK-bJw"/>
                                                 </connections>
                                             </button>

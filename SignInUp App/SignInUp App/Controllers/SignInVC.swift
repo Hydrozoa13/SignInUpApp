@@ -27,17 +27,22 @@ class SignInVC: UIViewController {
     
     @IBAction func emailTFAction(_ sender: UITextField) {
         if let email = sender.text, !email.isEmpty,
-           email == userDefaults.object(forKey: "email") as? String {
+           email == userDefaults.string(forKey: "email") {
             emailValidated = true
         } else { emailValidated = false }
     }
     
     @IBAction func passwordTFAction(_ sender: UITextField) {
         if let password = sender.text, !password.isEmpty,
-           password == userDefaults.object(forKey: "password") as? String {
+           password == userDefaults.string(forKey: "password") {
             passwordValidated = true
         } else { passwordValidated = false }
         errorLbl.isHidden = passwordValidated && emailValidated
+    }
+    
+    @IBAction func signInAction() {
+        passwordTF.text = ""
+        signInBtn.isEnabled = false
     }
     
     private func setupUI() {
