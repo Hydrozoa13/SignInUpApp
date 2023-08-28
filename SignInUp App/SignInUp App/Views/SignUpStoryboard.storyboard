@@ -87,7 +87,7 @@
                                                                 <rect key="frame" x="0.0" y="41" width="380" height="34"/>
                                                                 <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="username"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="username"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
