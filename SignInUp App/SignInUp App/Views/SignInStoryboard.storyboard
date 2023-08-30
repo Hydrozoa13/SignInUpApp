@@ -11,37 +11,43 @@
         <!--Sign InVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="SignInVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signIn" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SignInVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aX-bF-UnU">
-                                <rect key="frame" x="159.33333333333334" y="118.00000000000001" width="111.33333333333334" height="40.666666666666671"/>
-                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="33"/>
-                                <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="C06-Nt-Wmg">
-                                <rect key="frame" x="25" y="339" width="380" height="323.33333333333326"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="C06-Nt-Wmg">
+                                <rect key="frame" x="25" y="198.66666666666666" width="380" height="503.66666666666674"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aX-bF-UnU">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="33"/>
+                                        <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-Ft-g8D">
-                                        <rect key="frame" x="0.0" y="0.0" width="380" height="123.66666666666667"/>
+                                        <rect key="frame" x="0.0" y="160.66666666666666" width="380" height="123.33333333333334"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cWk-WQ-ODu">
-                                                <rect key="frame" x="0.0" y="0.0" width="380" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                 <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailTFAction:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="P1J-6M-R0v"/>
+                                                </connections>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ruw-u4-aF7">
-                                                <rect key="frame" x="0.0" y="59.333333333333307" width="380" height="64.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="58.999999999999993" width="380" height="64.333333333333314"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbD-o7-kDr">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
                                                         <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="passwordTFAction:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="wLP-Z7-zmJ"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: wrong email or password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0D-I9-SAn">
                                                         <rect key="frame" x="0.0" y="44" width="380" height="20.333333333333329"/>
@@ -54,7 +60,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="fFG-lv-u1N">
-                                        <rect key="frame" x="0.0" y="223.6666666666666" width="380" height="99.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="404" width="380" height="99.666666666666686"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sp-6N-Yu4">
                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="37.333333333333336"/>
@@ -64,6 +70,9 @@
                                                     <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="6Po-eJ-HVq" kind="show" identifier="" id="4Fm-NK-bJw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmI-sP-hW5">
                                                 <rect key="frame" x="0.0" y="62.333333333333371" width="380" height="37.333333333333343"/>
@@ -85,15 +94,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.74387162138311225" green="0.86452265703676456" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="5aX-bF-UnU" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="EWd-ck-m6p"/>
-                            <constraint firstItem="5aX-bF-UnU" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="JJf-tY-itd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="C06-Nt-Wmg" secondAttribute="trailing" constant="25" id="Kh9-xQ-AYn"/>
-                            <constraint firstItem="C06-Nt-Wmg" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="KvI-Ck-zuk"/>
+                            <constraint firstItem="C06-Nt-Wmg" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" constant="-50" id="KvI-Ck-zuk"/>
                             <constraint firstItem="C06-Nt-Wmg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="jGT-uW-t5U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ukQ-zj-tiA"/>
                     <connections>
+                        <outlet property="constraintY" destination="KvI-Ck-zuk" id="eg5-hb-ZB8"/>
                         <outlet property="emailTF" destination="cWk-WQ-ODu" id="eLx-Gh-p91"/>
                         <outlet property="errorLbl" destination="t0D-I9-SAn" id="Sbx-tR-caL"/>
                         <outlet property="passwordTF" destination="kbD-o7-kDr" id="IbA-8O-zIf"/>
@@ -104,6 +112,16 @@
             </objects>
             <point key="canvasLocation" x="1042.3255813953488" y="3.218884120171674"/>
         </scene>
+        <!--MainStoryboard-->
+        <scene sceneID="LzF-Hu-ea9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainStoryboard" id="6Po-eJ-HVq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cDZ-In-Z2k"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGA-fa-Mvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1598" y="-128"/>
+        </scene>
         <!--SignUpStoryboard-->
         <scene sceneID="fDS-AF-8WQ">
             <objects>
@@ -112,7 +130,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFF-Vh-ZlB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="127"/>
+            <point key="canvasLocation" x="1607" y="120"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Da8-8l-662">

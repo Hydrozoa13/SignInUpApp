@@ -4,25 +4,61 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Profile-->
         <scene sceneID="ZWf-2I-brU">
             <objects>
-                <viewController id="evQ-ko-YvW" sceneMemberID="viewController">
+                <viewController id="evQ-ko-YvW" customClass="ProfileVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXq-1i-hia">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="S11-8u-cgS">
+                                <rect key="frame" x="25" y="569.33333333333337" width="343" height="99.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-WE-0wB">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="37.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Log Out" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
+                                            <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="AIg-bW-D3Y" kind="unwind" unwindAction="unwindToSignInVC:" id="8Is-Ty-UYX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-GO-tgf">
+                                        <rect key="frame" x="0.0" y="62.333333333333258" width="343" height="37.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Delete account" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
+                                            <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="deleteAccAction" destination="evQ-ko-YvW" eventType="touchUpInside" id="zuI-pF-CNe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ora-wO-IUu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="S11-8u-cgS" firstAttribute="leading" secondItem="ora-wO-IUu" secondAttribute="leading" constant="25" id="Afz-7D-usU"/>
+                            <constraint firstItem="ora-wO-IUu" firstAttribute="trailing" secondItem="S11-8u-cgS" secondAttribute="trailing" constant="25" id="NeY-wa-w3h"/>
+                            <constraint firstItem="ora-wO-IUu" firstAttribute="bottom" secondItem="S11-8u-cgS" secondAttribute="bottom" constant="100" id="akm-Ay-ii1"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="9zp-Vi-dB2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnE-kd-YaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="AIg-bW-D3Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="505" y="1"/>
+            <point key="canvasLocation" x="534" y="-637"/>
         </scene>
         <!--App-->
         <scene sceneID="Mkc-uq-3mm">
@@ -32,13 +68,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Arc-uv-2NH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="App" image="app.fill" catalog="system" id="4yG-2X-ANc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYG-Is-DvT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="-658"/>
+            <point key="canvasLocation" x="534" y="44"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="6vZ-sw-RXY">
@@ -47,11 +83,12 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YHD-ti-Csk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zq2-yZ-WLu" kind="relationship" relationship="viewControllers" id="Qr5-JE-USf"/>
                         <segue destination="evQ-ko-YvW" kind="relationship" relationship="viewControllers" id="BzN-tF-1oZ"/>
+                        <segue destination="zq2-yZ-WLu" kind="relationship" relationship="viewControllers" id="Qr5-JE-USf"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxe-WC-dAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -62,8 +99,5 @@
     <resources>
         <image name="app.fill" catalog="system" width="128" height="114"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
