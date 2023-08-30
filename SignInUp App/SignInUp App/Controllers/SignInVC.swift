@@ -15,7 +15,6 @@ class SignInVC: UIViewController {
     @IBOutlet weak var signInBtn: UIButton!
     @IBOutlet weak var constraintY: NSLayoutConstraint!
     
-    var userModel: UserModel?
     private var emailValidated = false { didSet {updateSignInBtnState()} }
     private var passwordValidated = false { didSet {updateSignInBtnState()} }
     

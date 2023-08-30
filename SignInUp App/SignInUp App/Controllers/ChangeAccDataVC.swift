@@ -19,10 +19,7 @@ class ChangeAccDataVC: UIViewController {
     @IBOutlet weak var confirmPassTF: UITextField!
     @IBOutlet weak var confirmationErrorLbl: UILabel!
     @IBOutlet weak var saveDataBtn: UIButton!
-
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
-    
-    
     
     private var isValidEmail = false { didSet { updateContinueBtnState() } }
     private var isConfirmedPass = false { didSet { updateContinueBtnState() } }
@@ -51,6 +48,7 @@ class ChangeAccDataVC: UIViewController {
             passwordStrength = VerificationService.isValidPassword(pass: passwordText)
         } else { passwordStrength = .veryWeak }
         passwordErrorLbl.isHidden = passwordStrength != .veryWeak
+        
         if passwordStrength == .strong {
             passOverviewLbl.isHidden = true
         }
@@ -109,21 +107,18 @@ class ChangeAccDataVC: UIViewController {
             && passwordStrength != .weak
     }
     
-    
-    
-    
     private func startKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        guard let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         centerYConstraint.constant = -80
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        guard let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         centerYConstraint.constant = 0
     }
 }
