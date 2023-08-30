@@ -17,8 +17,7 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func deleteAccAction() {
-        userDefaults.removeObject(forKey: "email")
-        userDefaults.removeObject(forKey: "password")
+        UserDefaultsService.cleanUserDefaults()
         navigationController?.popToRootViewController(animated: true)
         if let destination = navigationController?.visibleViewController as? SignInVC {
             destination.emailTF.text = ""

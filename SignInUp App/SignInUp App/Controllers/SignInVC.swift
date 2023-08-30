@@ -18,7 +18,6 @@ class SignInVC: UIViewController {
     var userModel: UserModel?
     private var emailValidated = false { didSet {updateSignInBtnState()} }
     private var passwordValidated = false { didSet {updateSignInBtnState()} }
-    private var userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +26,14 @@ class SignInVC: UIViewController {
     
     @IBAction func emailTFAction(_ sender: UITextField) {
         if let email = sender.text, !email.isEmpty,
-           email == userDefaults.string(forKey: "email") {
+           email == UserDefaultsService.getUserModel()?.email {
             emailValidated = true
         } else { emailValidated = false }
     }
     
     @IBAction func passwordTFAction(_ sender: UITextField) {
         if let password = sender.text, !password.isEmpty,
-           password == userDefaults.string(forKey: "password") {
+           password == UserDefaultsService.getUserModel()?.password {
             passwordValidated = true
         } else { passwordValidated = false }
         errorLbl.isHidden = passwordValidated && emailValidated
