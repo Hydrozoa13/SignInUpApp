@@ -21,6 +21,8 @@ class ChangeAccDataVC: UIViewController {
     @IBOutlet weak var saveDataBtn: UIButton!
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
     
+    private let eyeButton = EyeButton()
+    private var isPrivate = true
     private var isValidEmail = false { didSet { updateContinueBtnState() } }
     private var isConfirmedPass = false { didSet { updateContinueBtnState() } }
     private var passwordStrength: PasswordStrength = .veryWeak {
@@ -74,15 +76,17 @@ class ChangeAccDataVC: UIViewController {
                                       email: email, password: password)
             UserDefaultsService.saveUserModel(userModel: userModel)
         }
+        
         if let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileVC")
-            as? ProfileVC
-        {
+            as? ProfileVC {
             navigationController?.pushViewController(vc, animated: true)
             vc.navigationItem.hidesBackButton = true
         }
     }
     
     private func setupUI() {
+        setupPasswordTF()
+        addActions()
         indicatorsViews.forEach { view in
             view.alpha = 0.2
             view.layer.cornerRadius = 7
@@ -120,5 +124,32 @@ class ChangeAccDataVC: UIViewController {
     @objc private func keyboardWillHide(notification: Notification) {
         guard let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         centerYConstraint.constant = 0
+    }
+    
+    @objc private func displayBookMarks() {
+        let imageName = isPrivate ? "eye" : "eye.slash"
+        passwordTF.isSecureTextEntry.toggle()
+        eyeButton.setImage(UIImage(systemName: imageName), for: .normal)
+        isPrivate.toggle()
+    }
+}
+
+private extension ChangeAccDataVC {
+    
+    func setupPasswordTF() {
+        passwordTF.delegate = self
+        passwordTF.rightView = eyeButton
+        passwordTF.rightViewMode = .always
+    }
+    
+    func addActions() {
+        eyeButton.addTarget(self, action: #selector(displayBookMarks), for: .touchUpInside)
+    }
+}
+
+extension ChangeAccDataVC: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        eyeButton.isEnabled = !text.isEmpty
     }
 }

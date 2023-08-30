@@ -43,6 +43,8 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func unwindToSignInVC(_ unwindSegue: UIStoryboardSegue) {
+        emailTF.text = UserDefaultsService.getUserModel()?.email
+        emailValidated = true
         passwordTF.text = ""
         signInBtn.isEnabled = false
     }
@@ -67,5 +69,6 @@ class SignInVC: UIViewController {
     
     private func updateSignInBtnState() {
         signInBtn.isEnabled = emailValidated && passwordValidated
+        errorLbl.isHidden = true
     }
 }

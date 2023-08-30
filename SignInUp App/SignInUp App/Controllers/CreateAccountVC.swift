@@ -20,6 +20,8 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var continueBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    private let eyeButton = EyeButton()
+    private var isPrivate = true
     private var isValidEmail = false { didSet { updateContinueBtnState() } }
     private var isConfirmedPass = false { didSet { updateContinueBtnState() } }
     private var passwordStrength: PasswordStrength = .veryWeak {
@@ -77,6 +79,8 @@ class CreateAccountVC: UIViewController {
     }
     
     private func setupUI() {
+        setupPasswordTF()
+        addActions()
         errorEmailLbl.isHidden = true
         errorPasswordLbl.isHidden = true
         passwordIndicatorsViews.forEach { view in
@@ -124,9 +128,36 @@ class CreateAccountVC: UIViewController {
         scrollView.scrollIndicatorInsets = contentInsets
     }
     
+    @objc private func displayBookMarks() {
+        let imageName = isPrivate ? "eye" : "eye.slash"
+        passwordTF.isSecureTextEntry.toggle()
+        eyeButton.setImage(UIImage(systemName: imageName), for: .normal)
+        isPrivate.toggle()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? SecretCodeVC,
               let userModel = sender as? UserModel else { return }
         destinationVC.userModel = userModel
+    }
+}
+
+private extension CreateAccountVC {
+    
+    func setupPasswordTF() {
+        passwordTF.delegate = self
+        passwordTF.rightView = eyeButton
+        passwordTF.rightViewMode = .always
+    }
+    
+    func addActions() {
+        eyeButton.addTarget(self, action: #selector(displayBookMarks), for: .touchUpInside)
+    }
+}
+
+extension CreateAccountVC: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        guard let text = textField.text else { return }
+        eyeButton.isEnabled = !text.isEmpty
     }
 }
