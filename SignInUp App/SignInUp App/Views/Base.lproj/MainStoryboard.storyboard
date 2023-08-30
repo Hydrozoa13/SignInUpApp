@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXL-A6-PZH">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,60 +13,259 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="evQ-ko-YvW" customClass="ProfileVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXq-1i-hia">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="S11-8u-cgS">
-                                <rect key="frame" x="25" y="569.33333333333337" width="343" height="99.666666666666629"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="129" translatesAutoresizingMaskIntoConstraints="NO" id="ml0-Dj-CMJ">
+                                <rect key="frame" x="25" y="253.33333333333334" width="380" height="401.66666666666663"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-WE-0wB">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="37.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Log Out" cornerStyle="capsule">
-                                            <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
-                                            <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="AIg-bW-D3Y" kind="unwind" unwindAction="unwindToSignInVC:" id="8Is-Ty-UYX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-GO-tgf">
-                                        <rect key="frame" x="0.0" y="62.333333333333258" width="343" height="37.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Delete account" cornerStyle="capsule">
-                                            <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
-                                            <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="deleteAccAction" destination="evQ-ko-YvW" eventType="touchUpInside" id="zuI-pF-CNe"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="49" translatesAutoresizingMaskIntoConstraints="NO" id="QM8-Ep-Mqm">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="110.66666666666667"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN3-Os-aM8">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="40.666666666666664"/>
+                                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="33"/>
+                                                <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGV-gc-HIR">
+                                                <rect key="frame" x="0.0" y="89.666666666666657" width="380" height="21"/>
+                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                                <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="S11-8u-cgS">
+                                        <rect key="frame" x="0.0" y="239.66666666666663" width="380" height="162"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpL-gI-aGt">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="37.333333333333336"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Change account Data" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
+                                                    <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="D9B-rT-i2G" kind="show" id="31D-K7-kvN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-WE-0wB">
+                                                <rect key="frame" x="0.0" y="62.333333333333371" width="380" height="37.333333333333343"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Log Out" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
+                                                    <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="AIg-bW-D3Y" kind="unwind" unwindAction="unwindToSignInVC:" id="8Is-Ty-UYX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-GO-tgf">
+                                                <rect key="frame" x="0.0" y="124.66666666666661" width="380" height="37.333333333333329"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="gray" title="Delete account" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
+                                                    <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="deleteAccAction" destination="evQ-ko-YvW" eventType="touchUpInside" id="zuI-pF-CNe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ora-wO-IUu"/>
                         <color key="backgroundColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="S11-8u-cgS" firstAttribute="leading" secondItem="ora-wO-IUu" secondAttribute="leading" constant="25" id="Afz-7D-usU"/>
-                            <constraint firstItem="ora-wO-IUu" firstAttribute="trailing" secondItem="S11-8u-cgS" secondAttribute="trailing" constant="25" id="NeY-wa-w3h"/>
-                            <constraint firstItem="ora-wO-IUu" firstAttribute="bottom" secondItem="S11-8u-cgS" secondAttribute="bottom" constant="100" id="akm-Ay-ii1"/>
+                            <constraint firstItem="ora-wO-IUu" firstAttribute="trailing" secondItem="ml0-Dj-CMJ" secondAttribute="trailing" constant="25" id="X7q-me-Sug"/>
+                            <constraint firstItem="ml0-Dj-CMJ" firstAttribute="centerY" secondItem="ora-wO-IUu" secondAttribute="centerY" id="b72-vN-nRr"/>
+                            <constraint firstItem="ml0-Dj-CMJ" firstAttribute="leading" secondItem="ora-wO-IUu" secondAttribute="leading" constant="25" id="zIp-MH-72L"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="9zp-Vi-dB2"/>
+                    <connections>
+                        <outlet property="emailLbl" destination="vGV-gc-HIR" id="5St-iu-L66"/>
+                        <outlet property="helloLbl" destination="gN3-Os-aM8" id="k1B-Qf-06D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RnE-kd-YaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="AIg-bW-D3Y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="534" y="-637"/>
         </scene>
+        <!--Change Acc DataVC-->
+        <scene sceneID="4Rc-h0-ZSI">
+            <objects>
+                <viewController id="D9B-rT-i2G" customClass="ChangeAccDataVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pzt-ZZ-wI6">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="aU3-cS-lDa">
+                                <rect key="frame" x="25" y="278" width="380" height="366"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4A6-K3-Cya">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaD-yw-sJI">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
+                                                <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                                                <connections>
+                                                    <action selector="emailTFAction:" destination="D9B-rT-i2G" eventType="editingChanged" id="3eD-hb-5ii"/>
+                                                </connections>
+                                            </textField>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: invalid email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXY-nl-wKn">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iNJ-cS-Hcb">
+                                        <rect key="frame" x="0.0" y="59" width="380" height="34"/>
+                                        <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="username"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="J2O-05-0Ch">
+                                        <rect key="frame" x="0.0" y="117.99999999999999" width="380" height="185.66666666666663"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5AD-dH-Sgk">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="49"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iWk-oi-7Cz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
+                                                        <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="passwordTFAction:" destination="D9B-rT-i2G" eventType="editingChanged" id="XZb-z2-Ida"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: weak password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBa-jw-gwI">
+                                                        <rect key="frame" x="0.0" y="36.666666666666686" width="380" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Sjg-1c-Oiu">
+                                                        <rect key="frame" x="0.0" y="39" width="380" height="10"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-Ph-3gQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="89" height="10"/>
+                                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="upQ-P2-H51">
+                                                                <rect key="frame" x="97" y="0.0" width="89" height="10"/>
+                                                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TJ1-qm-12F">
+                                                                <rect key="frame" x="194" y="0.0" width="89" height="10"/>
+                                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmM-C0-DQ0">
+                                                                <rect key="frame" x="291" y="0.0" width="89" height="10"/>
+                                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="upQ-P2-H51" firstAttribute="width" secondItem="TJ1-qm-12F" secondAttribute="width" id="9bz-MU-NeA"/>
+                                                            <constraint firstAttribute="height" constant="10" id="YLT-5O-FFo"/>
+                                                            <constraint firstItem="WkY-Ph-3gQ" firstAttribute="width" secondItem="upQ-P2-H51" secondAttribute="width" id="aFF-tq-j1f"/>
+                                                            <constraint firstItem="TJ1-qm-12F" firstAttribute="width" secondItem="QmM-C0-DQ0" secondAttribute="width" id="p5d-Lg-GHh"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1N-xS-vhr">
+                                                <rect key="frame" x="0.0" y="69" width="380" height="62.666666666666657"/>
+                                                <string key="text">Your password must be at least 8 characters long, contain a combination of uppercase and lowercase letters and at least one number. </string>
+                                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                                <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JNS-Pt-tEK">
+                                                <rect key="frame" x="0.0" y="151.66666666666663" width="380" height="34"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="72w-cR-5LY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="380" height="34"/>
+                                                        <color key="textColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" textContentType="password"/>
+                                                        <connections>
+                                                            <action selector="confirmPassTFAction:" destination="D9B-rT-i2G" eventType="editingChanged" id="7cg-ES-jQ0"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error: the password doesn't match" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTB-bG-XIM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="380" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRj-3J-OJb">
+                                        <rect key="frame" x="0.0" y="328.66666666666663" width="380" height="37.333333333333314"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Save new Data" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="19"/>
+                                            <color key="baseForegroundColor" red="0.23921570180000001" green="0.28627452250000002" blue="0.63921570780000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveDataAction:" destination="D9B-rT-i2G" eventType="touchUpInside" id="Bnv-gk-xAv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="efR-h8-s1W"/>
+                        <color key="backgroundColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aU3-cS-lDa" secondAttribute="trailing" constant="25" id="N6q-9K-eam"/>
+                            <constraint firstItem="aU3-cS-lDa" firstAttribute="leading" secondItem="efR-h8-s1W" secondAttribute="leading" constant="25" id="NyU-n2-SuA"/>
+                            <constraint firstItem="aU3-cS-lDa" firstAttribute="centerY" secondItem="efR-h8-s1W" secondAttribute="centerY" id="poY-iA-lN6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kk1-ev-f3d"/>
+                    <connections>
+                        <outlet property="centerYConstraint" destination="poY-iA-lN6" id="Tvz-jT-t2r"/>
+                        <outlet property="confirmPassTF" destination="72w-cR-5LY" id="XI2-gY-po8"/>
+                        <outlet property="confirmationErrorLbl" destination="yTB-bG-XIM" id="YrP-Uo-A53"/>
+                        <outlet property="emailErrorLbl" destination="XXY-nl-wKn" id="W9j-y4-PzW"/>
+                        <outlet property="emailTF" destination="WaD-yw-sJI" id="qrN-q4-LVb"/>
+                        <outlet property="nameTF" destination="iNJ-cS-Hcb" id="NbY-4W-S6N"/>
+                        <outlet property="passOverviewLbl" destination="p1N-xS-vhr" id="Keh-eF-gua"/>
+                        <outlet property="passwordErrorLbl" destination="XBa-jw-gwI" id="ssu-bO-yGC"/>
+                        <outlet property="passwordTF" destination="iWk-oi-7Cz" id="wgP-9T-WnU"/>
+                        <outlet property="saveDataBtn" destination="uRj-3J-OJb" id="XlM-N2-4gL"/>
+                        <outletCollection property="indicatorsViews" destination="WkY-Ph-3gQ" collectionClass="NSMutableArray" id="Xc9-Nc-DLG"/>
+                        <outletCollection property="indicatorsViews" destination="upQ-P2-H51" collectionClass="NSMutableArray" id="9do-1Q-hUP"/>
+                        <outletCollection property="indicatorsViews" destination="TJ1-qm-12F" collectionClass="NSMutableArray" id="Jyo-Vm-2tT"/>
+                        <outletCollection property="indicatorsViews" destination="QmM-C0-DQ0" collectionClass="NSMutableArray" id="8vH-GM-frZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ad-KP-VGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1282" y="-637"/>
+        </scene>
         <!--App-->
         <scene sceneID="Mkc-uq-3mm">
             <objects>
                 <viewController id="zq2-yZ-WLu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JHh-1f-EEy">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Arc-uv-2NH"/>
                         <color key="backgroundColor" red="0.74387162139999996" green="0.86452265699999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -99,5 +299,17 @@
     <resources>
         <image name="app.fill" catalog="system" width="128" height="114"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
