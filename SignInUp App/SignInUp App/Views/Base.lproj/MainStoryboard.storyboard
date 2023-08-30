@@ -10,7 +10,7 @@
         <!--Profile-->
         <scene sceneID="ZWf-2I-brU">
             <objects>
-                <viewController id="evQ-ko-YvW" customClass="ProfileVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="evQ-ko-YvW" customClass="ProfileVC" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sXq-1i-hia">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="6vZ-sw-RXY">
             <objects>
-                <tabBarController id="IXL-A6-PZH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IXL-A6-PZH" customClass="TabBarController" customModule="SignInUp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YHD-ti-Csk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

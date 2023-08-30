@@ -13,7 +13,6 @@ class ProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
     }
     
     @IBAction func deleteAccAction() {
@@ -24,10 +23,6 @@ class ProfileVC: UIViewController {
             destination.passwordTF.text = ""
             destination.signInBtn.isEnabled = false
         } else { return }
-    }
-    
-    private func setupUI() {
-        tabBarController?.navigationItem.hidesBackButton = true
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -22,6 +22,10 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+      
+        if let _ = UserDefaultsService.getUserModel() {
+            goToTabBarController()
+        }
     }
     
     @IBAction func emailTFAction(_ sender: UITextField) {
@@ -42,6 +46,18 @@ class SignInVC: UIViewController {
     @IBAction func unwindToSignInVC(_ unwindSegue: UIStoryboardSegue) {
         passwordTF.text = ""
         signInBtn.isEnabled = false
+    }
+    
+    @IBAction func signInAction() {
+        goToTabBarController()
+    }
+    
+    private func goToTabBarController() {
+        let storyboard = UIStoryboard(name: "MainStoryboard", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+                as? TabBarController
+        else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupUI() {

@@ -71,7 +71,7 @@
                                                     <color key="baseBackgroundColor" red="0.51372551919999998" green="0.66274511810000003" blue="0.85098040100000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="6Po-eJ-HVq" kind="show" identifier="" id="4Fm-NK-bJw"/>
+                                                    <action selector="signInAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tTR-QQ-7kx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmI-sP-hW5">
@@ -111,16 +111,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.3255813953488" y="3.218884120171674"/>
-        </scene>
-        <!--MainStoryboard-->
-        <scene sceneID="LzF-Hu-ea9">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MainStoryboard" id="6Po-eJ-HVq" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cDZ-In-Z2k"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FGA-fa-Mvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1598" y="-128"/>
         </scene>
         <!--SignUpStoryboard-->
         <scene sceneID="fDS-AF-8WQ">
