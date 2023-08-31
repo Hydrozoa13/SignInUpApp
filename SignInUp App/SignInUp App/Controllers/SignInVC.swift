@@ -22,7 +22,7 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         
-        if let isLogged = UserDefaults.standard.object(forKey: "isLoggedIn") as? Bool {
+        if let _ = UserDefaults.standard.object(forKey: "isLoggedIn") as? Bool {
             goToTabBarController()
         } else { return }
     }
