@@ -21,12 +21,12 @@ class ProfileVC: UIViewController {
     
     @IBAction func deleteAccAction() {
         UserDefaultsService.cleanUserDefaults()
+        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
         navigationController?.popToRootViewController(animated: true)
         if let destination = navigationController?.visibleViewController as? SignInVC {
             destination.emailTF.text = ""
             destination.passwordTF.text = ""
             destination.signInBtn.isEnabled = false
-            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
         } else { return }
     }
     
