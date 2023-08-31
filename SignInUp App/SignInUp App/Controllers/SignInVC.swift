@@ -21,10 +21,10 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-      
-        if let _ = UserDefaultsService.getUserModel() {
+        
+        if let isLogged = UserDefaults.standard.object(forKey: "isLoggedIn") as? Bool {
             goToTabBarController()
-        }
+        } else { return }
     }
     
     @IBAction func emailTFAction(_ sender: UITextField) {
@@ -43,6 +43,7 @@ class SignInVC: UIViewController {
     }
     
     @IBAction func unwindToSignInVC(_ unwindSegue: UIStoryboardSegue) {
+        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
         emailTF.text = UserDefaultsService.getUserModel()?.email
         emailValidated = true
         passwordTF.text = ""
@@ -51,6 +52,7 @@ class SignInVC: UIViewController {
     
     @IBAction func signInAction() {
         goToTabBarController()
+        UserDefaults.standard.set(true, forKey: "isLoggedIn")
     }
     
     private func goToTabBarController() {

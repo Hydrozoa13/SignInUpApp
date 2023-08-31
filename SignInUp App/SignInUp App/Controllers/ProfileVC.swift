@@ -26,6 +26,7 @@ class ProfileVC: UIViewController {
             destination.emailTF.text = ""
             destination.passwordTF.text = ""
             destination.signInBtn.isEnabled = false
+            UserDefaults.standard.removeObject(forKey: "isLoggedIn")
         } else { return }
     }
     
