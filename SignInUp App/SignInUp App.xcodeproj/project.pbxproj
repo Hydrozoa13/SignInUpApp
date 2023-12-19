@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		D15BC9252A969AD9006E1FFE /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BC9242A969AD9006E1FFE /* UIViewControllerExt.swift */; };
+		D16BB1AE2A9F8630006D24D6 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BB1AD2A9F8630006D24D6 /* UserDefaultsService.swift */; };
+		D16BB1B02A9F87BA006D24D6 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BB1AF2A9F87BA006D24D6 /* UserDefaultsExt.swift */; };
+		D16BB1B22A9FAF97006D24D6 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BB1B12A9FAF97006D24D6 /* TabBarController.swift */; };
+		D16BB1B42A9FBFC6006D24D6 /* ChangeAccDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BB1B32A9FBFC6006D24D6 /* ChangeAccDataVC.swift */; };
+		D16BB1B62A9FE8A4006D24D6 /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BB1B52A9FE8A4006D24D6 /* EyeButton.swift */; };
 		D16FD7992A9628B8005544B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD7982A9628B8005544B6 /* AppDelegate.swift */; };
 		D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16FD79A2A9628B8005544B6 /* SceneDelegate.swift */; };
 		D16FD7A02A9628B8005544B6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16FD79E2A9628B8005544B6 /* MainStoryboard.storyboard */; };
@@ -26,6 +31,11 @@
 
 /* Begin PBXFileReference section */
 		D15BC9242A969AD9006E1FFE /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		D16BB1AD2A9F8630006D24D6 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		D16BB1AF2A9F87BA006D24D6 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
+		D16BB1B12A9FAF97006D24D6 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D16BB1B32A9FBFC6006D24D6 /* ChangeAccDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAccDataVC.swift; sourceTree = "<group>"; };
+		D16BB1B52A9FE8A4006D24D6 /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
 		D16FD7952A9628B8005544B6 /* SignInUp App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SignInUp App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16FD7982A9628B8005544B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16FD79A2A9628B8005544B6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				D15BC9242A969AD9006E1FFE /* UIViewControllerExt.swift */,
+				D16BB1AF2A9F87BA006D24D6 /* UserDefaultsExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -121,7 +132,9 @@
 				D16FD7B52A965A4C005544B6 /* CreateAccountVC.swift */,
 				D17BE3F22A9A8D8400D24D1A /* SecretCodeVC.swift */,
 				D1F17FC42A9B729D005EF89C /* WelcomeVC.swift */,
+				D16BB1B12A9FAF97006D24D6 /* TabBarController.swift */,
 				D1A427612A9D1D920040D948 /* ProfileVC.swift */,
+				D16BB1B32A9FBFC6006D24D6 /* ChangeAccDataVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				D17BE3ED2A9A4D3C00D24D1A /* VerificationService.swift */,
+				D16BB1AD2A9F8630006D24D6 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -138,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D17BE3F02A9A6C0700D24D1A /* UserModel.swift */,
+				D16BB1B52A9FE8A4006D24D6 /* EyeButton.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,13 +230,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16BB1B42A9FBFC6006D24D6 /* ChangeAccDataVC.swift in Sources */,
+				D16BB1B02A9F87BA006D24D6 /* UserDefaultsExt.swift in Sources */,
+				D16BB1B22A9FAF97006D24D6 /* TabBarController.swift in Sources */,
 				D1A427622A9D1D920040D948 /* ProfileVC.swift in Sources */,
+				D16BB1AE2A9F8630006D24D6 /* UserDefaultsService.swift in Sources */,
 				D15BC9252A969AD9006E1FFE /* UIViewControllerExt.swift in Sources */,
 				D17BE3F12A9A6C0700D24D1A /* UserModel.swift in Sources */,
 				D16FD7992A9628B8005544B6 /* AppDelegate.swift in Sources */,
 				D17BE3EE2A9A4D3C00D24D1A /* VerificationService.swift in Sources */,
 				D16FD79B2A9628B8005544B6 /* SceneDelegate.swift in Sources */,
 				D16FD7B62A965A4C005544B6 /* CreateAccountVC.swift in Sources */,
+				D16BB1B62A9FE8A4006D24D6 /* EyeButton.swift in Sources */,
 				D1F17FC52A9B729D005EF89C /* WelcomeVC.swift in Sources */,
 				D16FD7B42A963E61005544B6 /* SignInVC.swift in Sources */,
 				D17BE3F32A9A8D8400D24D1A /* SecretCodeVC.swift in Sources */,

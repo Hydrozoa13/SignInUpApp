@@ -1,24 +1,25 @@
 //
-//  CreateAccountVC.swift
+//  ChangeAccDataVC.swift
 //  SignInUp App
 //
-//  Created by Евгений Лойко on 23.08.23.
+//  Created by Евгений Лойко on 30.08.23.
 //
 
 import UIKit
 
-class CreateAccountVC: UIViewController {
-    
+class ChangeAccDataVC: UIViewController {
+
     @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var errorEmailLbl: UILabel!
+    @IBOutlet weak var emailErrorLbl: UILabel!
     @IBOutlet weak var nameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var errorPasswordLbl: UILabel!
-    @IBOutlet var passwordIndicatorsViews: [UIView]!
-    @IBOutlet weak var confirmPasswordTF: UITextField!
-    @IBOutlet weak var errorPasswordConfirmLbl: UILabel!
-    @IBOutlet weak var continueBtn: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var passOverviewLbl: UILabel!
+    @IBOutlet weak var passwordErrorLbl: UILabel!
+    @IBOutlet var indicatorsViews: [UIView]!
+    @IBOutlet weak var confirmPassTF: UITextField!
+    @IBOutlet weak var confirmationErrorLbl: UILabel!
+    @IBOutlet weak var saveDataBtn: UIButton!
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
     
     private let eyeButton = EyeButton()
     private var isPrivate = true
@@ -31,10 +32,7 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-    
-    @IBAction func signInAction() {
-        navigationController?.popViewController(animated: true)
+        startKeyboardObserver()
     }
     
     @IBAction func emailTFAction(_ sender: UITextField) {
@@ -43,8 +41,7 @@ class CreateAccountVC: UIViewController {
            VerificationService.isValidEmail(email: email) {
             isValidEmail = true
         } else { isValidEmail = false }
-        
-        errorEmailLbl.isHidden = isValidEmail
+        emailErrorLbl.isHidden = isValidEmail
     }
     
     @IBAction func passwordTFAction(_ sender: UITextField) {
@@ -52,11 +49,14 @@ class CreateAccountVC: UIViewController {
            !passwordText.isEmpty {
             passwordStrength = VerificationService.isValidPassword(pass: passwordText)
         } else { passwordStrength = .veryWeak }
-        errorPasswordLbl.isHidden = passwordStrength != .veryWeak
+        passwordErrorLbl.isHidden = passwordStrength != .veryWeak
         
+        if passwordStrength == .strong {
+            passOverviewLbl.isHidden = true
+        }
         setupStrengthIndicators()
     }
-        
+    
     @IBAction func confirmPassTFAction(_ sender: UITextField) {
         if let confirmPassText = sender.text,
            !confirmPassText.isEmpty,
@@ -65,37 +65,38 @@ class CreateAccountVC: UIViewController {
             isConfirmedPass = VerificationService.isConfirmedPass(pass1: passwordText,
                                                                   pass2: confirmPassText)
         } else { isConfirmedPass = false }
-        
-        errorPasswordConfirmLbl.isHidden = isConfirmedPass
+        confirmationErrorLbl.isHidden = isConfirmedPass
     }
     
-    @IBAction func continueAction() {
+    @IBAction func saveDataAction(_ sender: UIButton) {
+        UserDefaultsService.cleanUserDefaults()
         if let email = emailTF.text,
            let password = passwordTF.text {
             let userModel = UserModel(name: nameTF.text,
                                       email: email, password: password)
-            performSegue(withIdentifier: "goToSecretCodeVC", sender: userModel)
+            UserDefaultsService.saveUserModel(userModel: userModel)
+        }
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileVC")
+            as? ProfileVC {
+            navigationController?.pushViewController(vc, animated: true)
+            vc.navigationItem.hidesBackButton = true
         }
     }
     
     private func setupUI() {
         setupPasswordTF()
         addActions()
-        errorEmailLbl.isHidden = true
-        errorPasswordLbl.isHidden = true
-        passwordIndicatorsViews.forEach { view in
+        indicatorsViews.forEach { view in
             view.alpha = 0.2
             view.layer.cornerRadius = 7
         }
-        errorPasswordConfirmLbl.isHidden = true
-        continueBtn.isEnabled = false
+        saveDataBtn.isEnabled = false
         hideKeyboardWhenTappedAround()
-        startKeyboardObserver()
-        navigationItem.hidesBackButton = true
     }
     
     private func setupStrengthIndicators() {
-        passwordIndicatorsViews.enumerated().forEach { index, view in
+        indicatorsViews.enumerated().forEach { index, view in
             if index <= (passwordStrength.rawValue - 1) {
                 view.alpha = 1
             } else {
@@ -105,7 +106,7 @@ class CreateAccountVC: UIViewController {
     }
     
     private func updateContinueBtnState() {
-        continueBtn.isEnabled = isValidEmail && isConfirmedPass
+        saveDataBtn.isEnabled = isValidEmail && isConfirmedPass
             && passwordStrength != .veryWeak
             && passwordStrength != .weak
     }
@@ -116,16 +117,13 @@ class CreateAccountVC: UIViewController {
     }
     
     @objc private func keyboardWillShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+        guard let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        centerYConstraint.constant = -80
     }
     
-    @objc private func keyboardWillHide() {
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+    @objc private func keyboardWillHide(notification: Notification) {
+        guard let _ = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        centerYConstraint.constant = 0
     }
     
     @objc private func displayBookMarks() {
@@ -134,15 +132,9 @@ class CreateAccountVC: UIViewController {
         eyeButton.setImage(UIImage(systemName: imageName), for: .normal)
         isPrivate.toggle()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? SecretCodeVC,
-              let userModel = sender as? UserModel else { return }
-        destinationVC.userModel = userModel
-    }
 }
 
-private extension CreateAccountVC {
+private extension ChangeAccDataVC {
     
     func setupPasswordTF() {
         passwordTF.delegate = self
@@ -155,7 +147,7 @@ private extension CreateAccountVC {
     }
 }
 
-extension CreateAccountVC: UITextFieldDelegate {
+extension ChangeAccDataVC: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else { return }
         eyeButton.isEnabled = !text.isEmpty

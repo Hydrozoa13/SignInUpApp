@@ -9,16 +9,19 @@ import UIKit
 
 class ProfileVC: UIViewController {
 
-    private var userDefaults = UserDefaults.standard
-
+    @IBOutlet weak var helloLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    
+    var userModel = UserDefaultsService.getUserModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
     @IBAction func deleteAccAction() {
-        userDefaults.removeObject(forKey: "email")
-        userDefaults.removeObject(forKey: "password")
+        UserDefaultsService.cleanUserDefaults()
+        UserDefaults.standard.removeObject(forKey: "isLoggedIn")
         navigationController?.popToRootViewController(animated: true)
         if let destination = navigationController?.visibleViewController as? SignInVC {
             destination.emailTF.text = ""
@@ -28,10 +31,7 @@ class ProfileVC: UIViewController {
     }
     
     private func setupUI() {
-        tabBarController?.navigationItem.hidesBackButton = true
+        helloLbl.text = "Hello \(userModel?.name ?? "")!"
+        emailLbl.text = "Your email: \(userModel?.email ?? "")"
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    }
-    
 }
